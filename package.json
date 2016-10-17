@@ -1,0 +1,23 @@
+{
+  "name": "shopdesign.com",
+  "version": "1.0.0",
+  "description": "Web shopdesign",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "author": "Eduardo Quñonez <okitoxd@gmail.com>",
+  "license": "ISC",
+  "homepage": "https://github.com/adnbyte/adnbyte.com#readme",
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-connect": "^5.0.0",
+    "gulp-stylus": "^2.5.0",
+    "nib": "^1.1.2",
+    "normalize.css": "^4.2.0"
+  }
+}
