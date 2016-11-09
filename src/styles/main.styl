@@ -1,14 +1,14 @@
 @import "../../node_modules/normalize.css/normalize.css"
-
-@font-face
-   font-family Cocogoose
-   font-style bold
-   src url(/assets/Cocogoose.otf)
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,400,500,700')
 
 @font-face
    font-family NexaLight
    font-style light
    src url(/assets/NexaLight.otf)
+
+@font-face
+   font-family Cocogoose
+   src url(/assets/Cocogoose.otf)
 
 @font-face
    font-family PreloBold
@@ -23,17 +23,17 @@
 $amarillo = #f7e02c
 $morado = #762b82
 $gris = #afb0b7
-
+$lila = #be3176
 body
-	font-family: NexaLight
+	font-family: Roboto
 	margin: 0
 	padding: 0
 
 h2
-	font-family: Cocogoose
+	font-family: Roboto
 	font-size: 3.5rem
 h4
-	font-family: Cocogoose
+	font-family: Roboto
 hr
 	box-shadow none
 	text-shadow none
@@ -45,21 +45,26 @@ hr
 	align-items center
 	a
 		font-size: .7rem
-		font-family: "Cocogoose"
-		color white
+		font-family: "Roboto"
+		color $amarillo
+		font-weight 300
 		text-decoration: none
 	ul
-		width: 35%
 		display flex
-		justify-content space-between
+		justify-content flex-end
 		padding 0
 		margin: 0
 		li
 			font-size: 1.3rem
 			color $amarillo
 			display flex
-			margin: 0
+			margin: 0 .3rem
 			padding 0
+			a
+				display block
+	&__icono
+		width: .9rem
+		height .9rem
 
 @media (min-width: 425px)
 	.contact
@@ -74,26 +79,29 @@ hr
 		padding .5rem 20vw
 
 .header
-	min-height: 30em
-	background-color: #00e8ef
-	//background-image: url("/assets/slide1.png")
-	background-size: cover
-	background-position: 27% center
+	background-color: white
 	position: relative
 	&__female
 		display none
-		align-items center
-		justify-content center
-		width: 100%
+		z-index: 100
+		order 2
 		text-align: center
-		img
-			width 80%
-			margin-bottom: -8%
-@media (min-width: 768px)
+		position: relative
+		width: 100%
+		&-movil
+			background: linear-gradient(180deg, #FFF 50%, $lila 50%)
+			margin-bottom -3rem
+			img
+				width 100%
+@media (min-width: 425px)
 	.header
 		min-height: auto
 		&__female
 			display block
+			img
+				width: 100%
+			&-movil
+				display none
 
 .nav
 	position: absolute
@@ -101,14 +109,15 @@ hr
 	top 1.5rem
 	text-align: right
 	&::before
-		border-radius: 50%
-		text-align: center
-		content '\f0c9'
-		font-size: 2.5em
-		color $amarillo
-		font-family: 'FontAwesome'
+		position: absolute
+		right: 0
+		content url('/assets/iconos/elementos-01.svg')
+		display block
+		width: 2rem
+		height 2rem
 	ul
 		margin: 0
+		margin-top: 2.5rem
 		transition all .3s ease
 		height 0
 		list-style-type: none
@@ -128,18 +137,20 @@ hr
 	.nav
 		right: 20vw
 .logo
+	display none
+	order 3
 	width: 100%
-	height: 30em
-	display flex
 	justify-content center
 	align-items center
+	background-color: $lila
 	img
-		width: 80vw
-
-@media (min-width: 375px)
+		position relative
+		top -1rem
+		width: 70vw
+@media (min-width: 425px)
 	.logo
-		img
-			width: 60vw
+		display block
+		background none
 @media (min-width: 768px)
 	.logo
 		left: 4rem
@@ -158,40 +169,57 @@ hr
 	.logo
 		left: 20vw
 .promo
+	display flex
+	flex-direction column
 	&__item
-		font-family: Cocogoose
+		font-family: Roboto
 		font-size: 2rem
+		text-align: center
 		&:nth-child(1)
-			background-color: #a4006c
+			order 1
+			background-color: $morado
 			color $amarillo
 		&:nth-child(2)
-			font-size: 3rem
+			order 0
+			font-size: 2.5rem
 			text-align: center
-			background-color: $amarillo
-			color #a4006c
-			line-height: 3.5rem
-		&__expertas
-			padding 0 1rem
+			background-color: $lila
 			color $amarillo
-			background-color: $morado
+			line-height: 3.5rem
+			font-family: Cocogoose
+			&::after
+				content: url('/assets/iconos/elementos-11.svg')
+				display inline-block
+				text-align: center
+				margin-top: 2rem
+				width: 10rem
 		&:nth-child(3)
-			background-color: $gris
-			color $morado
+			order 2
+			background-color: $lila
+			color $amarillo
 	&__precio
-		color white
 		font-size: 4.5rem
 		text-align: center
+		font-family: Cocogoose
+		border 5px solid $amarillo
+		border-radius: 10px
 	&__todo
-		color white
+		margin-bottom: .5rem
 		font-size: 1.4rem
+		text-align: left
 	ul
-		font-size: 1.5rem
+		font-size: 1.2rem
 		margin: 1rem 0
 		padding-left 2rem
 		list-style-type: none
-		font-family: PreloBold
+		font-family: Roboto
+		font-weight: 400
+		line-height: 2rem
 	h4
 		margin: 1rem 0
+		font-family: Cocogoose
+		font-weight: 400
+		font-size: 2.7rem
 
 @media (min-width:768px)
 	.promo
@@ -230,11 +258,14 @@ hr
 	&__info
 		order 2
 		text-align: center
+		font-family: Roboto
+		color #666
 		h2
 			color $morado
 			margin 1rem 0
 		p
-			font-size: 1.5rem
+			font-size: .95rem
+			line-height: 1.7rem
 	&__img
 		order 1
 		img
@@ -246,7 +277,7 @@ hr
 		color $amarillo
 		font-size: 3rem
 		&__text
-			font-family: Cocogoose
+			font-family: Roboto
 			padding 0 .5rem
 			font-size: .8rem
 			text-align: left
@@ -274,19 +305,24 @@ hr
 	&__info
 		background-color: none
 		color white
-		h2
-			margin: .5rem 0
-			display inline-block
-			font-size: 6rem
-			&::before
-				text-align: right
-				font-size: 1.5rem
-				content "Fórmula"
-				display block
-				color $amarillo
+		&__sale
+			background-color: $amarillo
+			h2
+				color $morado
+				font-weight: 400
+				font-family: Cocogoose
+				margin: .5rem 0
+				display inline-block
+				font-size: 7rem
+				&::before
+					text-align: left
+					font-size: 1.5rem
+					content "FÓRMULA"
+					display block
+					color $morado
 		p
-			font-size: 1.5rem
-			line-height: 1.5em
+			font-size: .9rem
+			line-height: 1.7em
 			margin: 0
 @media (min-width: 768px)
 	.formula1
@@ -321,18 +357,19 @@ hr
 .formula2
 	padding 3rem 10vw
 	text-align: center
-	background-color: $amarillo
+	background-color: $morado
 	font-size: 1.7rem
-	color $morado
+	color $amarillo
 	font-family: Cocogoose
 	span
 		letter-spacing 3px
 		&:nth-child(1)
 			&::before
-				content '\f07a'
+				content url('/assets/iconos/elementos-15.svg')
 				font-family: FontAwesome
-				display block
-				font-size: 7rem
+				display inline-block
+				width: 7rem
+				margin-bottom: 1rem
 		&::after
 			content '\f054'
 			font-family: FontAwesome
@@ -364,11 +401,13 @@ hr
 					font-size: 1.4rem
 					transform scale(1.3,3)
 .about-2
+	display flex
+	flex-direction column-reverse
 	text-align: center
 	background-image url('/assets/icono-trama.svg')
 	background-size: 9rem 9rem
 	&__img img
-		width 50%
+		width 70%
 		margin: 0 2rem
 	&__info
 		font-size: 1.3rem
@@ -413,11 +452,13 @@ hr
 .form
 	background-color: $amarillo
 	&__label
-		color white
+		color $morado
 		text-align: center
 		h2
+			font-family: Cocogoose
+			font-weight: 400
 			margin: 0
-			font-size: 2.5rem
+			font-size: 3rem
 			position: relative
 			line-height: 6rem
 			/*&::before
@@ -431,10 +472,9 @@ hr
 		margin: .3rem 0
 		background none
 		width: 100%
-		padding 1.5rem 1rem
+		padding .7rem
 		border 1px solid black
 		box-sizing: border-box
-		border-radius: .5rem
 		&:focus
 			outline: none
 	&__submit
@@ -442,15 +482,17 @@ hr
 		text-align: center
 		a
 			color $morado
-			font-family: Cocogoose
+			font-family: Roboto
 			text-decoration: none
 			font-size: .8rem
+			font-weight: 700
 			span
 				color black
 		input
 			background-color: $morado
 			color white
-			font-family: Cocogoose
+			font-family: Roboto
+			font-weight: 700
 			padding .7rem
 			text-align: center
 			border none
@@ -471,7 +513,7 @@ hr
 		height 20em
 .footer
 	padding 3rem 5vw
-	font-family: Cocogoose
+	font-family: Roboto
 	text-align: center
 	background-color: #2c2b25
 	&__logo img
@@ -502,7 +544,7 @@ hr
 	background-color: #21221c
 	text-align: center
 	color white
-	font-family: Cocogoose
+	font-family: Roboto
 
 .section
 	padding 3rem 5vw
@@ -602,7 +644,7 @@ hr
 			right 10vw
 			img
 				width: 200px
-				
+
 .modal
 	position: fixed
 	top 0
@@ -629,4 +671,5 @@ hr
 			color #FFF
 	&__content
 		border 4px solid #fff
-		min-height 50%
+		min-height 30%
+		max-width: 85vw
