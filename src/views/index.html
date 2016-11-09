@@ -122,39 +122,46 @@
           <div class="grid">
             <div class="grid__mas"><img src="/assets/icono-mas.svg"></div>
             <div class="grid__row">
-              <div class="grid__item1"><img src="/assets/chicas/foto-01.png"></div>
-              <div class="grid__item1"><img src="/assets/chicas/foto-02.png"></div>
-              <div class="grid__item1"><img src="/assets/chicas/foto-03.png"></div>
+              <div class="grid__item1"><img onclick="openModal('/assets/chicas/foto-01.png');" src="/assets/chicas/foto-01.png"></div>
+              <div class="grid__item1"><img onclick="openModal('/assets/chicas/foto-02.png');" src="/assets/chicas/foto-02.png"></div>
+              <div class="grid__item1"><img onclick="openModal('/assets/chicas/foto-03.png');" src="/assets/chicas/foto-03.png"></div>
             </div>
             <div class="grid__row">
-              <div class="grid__item1"><img src="/assets/chicas/foto-04.png"></div>
-              <div class="grid__item2"><img src="/assets/chicas/foto-05.png"></div>
+              <div class="grid__item1"><img onclick="openModal('/assets/chicas/foto-04.png');" src="/assets/chicas/foto-04.png"></div>
+              <div class="grid__item2"><img onclick="openModal('/assets/chicas/foto-05.png');" src="/assets/chicas/foto-05.png"></div>
             </div>
             <div class="grid__row-col">
               <div class="grid__col">
-                <div class="grid__item2"><img src="/assets/chicas/foto-06.png"></div>
-                <div class="grid__item1"><img src="/assets/chicas/foto-09.png"></div>
+                <div class="grid__item2"><img onclick="openModal('/assets/chicas/foto-06.png');" src="/assets/chicas/foto-06.png"></div>
+                <div class="grid__item1"><img onclick="openModal('/assets/chicas/foto-09.png');" src="/assets/chicas/foto-09.png"></div>
               </div>
               <div class="grid__col">
-                <div class="grid__item1"><img src="/assets/chicas/foto-07.png"></div>
-                <div class="grid__item2"><img src="/assets/chicas/foto-10.png"></div>
+                <div class="grid__item1"><img onclick="openModal('/assets/chicas/foto-07.png');" src="/assets/chicas/foto-07.png"></div>
+                <div class="grid__item2"><img onclick="openModal('/assets/chicas/foto-10.png');" src="/assets/chicas/foto-10.png"></div>
               </div>
               <div class="grid__col">
-                <div class="grid__item1"><img src="/assets/chicas/foto-08.png"></div>
-                <div class="grid__item1"><img src="/assets/chicas/foto-11.png"></div>
-                <div class="grid__item1"><img src="/assets/chicas/foto-14.png"></div>
+                <div class="grid__item1"><img onclick="openModal('/assets/chicas/foto-08.png');" src="/assets/chicas/foto-08.png"></div>
+                <div class="grid__item1"><img onclick="openModal('/assets/chicas/foto-11.png');" src="/assets/chicas/foto-11.png"></div>
+                <div class="grid__item1"><img onclick="openModal('/assets/chicas/foto-14.png');" src="/assets/chicas/foto-14.png"></div>
               </div>
             </div>
             <div class="grid__row">
-              <div class="grid__item1"><img src="/assets/chicas/foto-12.png"></div>
-              <div class="grid__item2"><img src="/assets/chicas/foto-13.png"></div>
+              <div class="grid__item1"><img onclick="openModal('/assets/chicas/foto-12.png');" src="/assets/chicas/foto-12.png"></div>
+              <div class="grid__item2"><img onclick="openModal('/assets/chicas/foto-13.png');" src="/assets/chicas/foto-13.png"></div>
             </div>
             <div class="grid__row">
-              <div class="grid__item1"><img src="/assets/chicas/foto-15.png"></div>
-              <div class="grid__item1"><img src="/assets/chicas/foto-16.png"></div>
-              <div class="grid__item1"><img src="/assets/chicas/foto-17.png"></div>
+              <div class="grid__item1"><img onclick="openModal('/assets/chicas/foto-15.png');" src="/assets/chicas/foto-15.png"></div>
+              <div class="grid__item1"><img onclick="openModal('/assets/chicas/foto-16.png');" src="/assets/chicas/foto-16.png"></div>
+              <div class="grid__item1"><img onclick="openModal('/assets/chicas/foto-17.png');" src="/assets/chicas/foto-17.png"></div>
             </div>
           </div>
+        </div>
+        <!-- MODAL view -->
+        
+        <div class="modal" id="modal">
+          <span id="modal__close" class="modal__close" onclick="document.getElementById('modal').style.display='none'">&times</span>
+          <img id="modal__content" class="modal__content">
+          <div id="modal__caption" class="modal__caption">Descripcion</div>
         </div>
 
         <div class="form section">

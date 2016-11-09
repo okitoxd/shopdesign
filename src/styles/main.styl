@@ -525,6 +525,7 @@ hr
 		height: 100%
 		object-fit: cover
 		object-position 50% 50%
+		cursor: zoom-in
 	&__row
 		display flex
 		flex-direction row
@@ -601,3 +602,31 @@ hr
 			right 10vw
 			img
 				width: 200px
+				
+.modal
+	position: fixed
+	top 0
+	bottom 0
+	right 0
+	left 0
+	background-color rgba(0, 0, 0, .6)
+	display none
+	flex-direction column
+	justify-content center
+	align-items center
+	z-index: 100
+	&__close
+		color #DDD
+		font-size: 3em
+		position: absolute
+		right 5%
+		top 5%
+		cursor: pointer
+		padding 1em
+		line-height: 0
+		font-weight bold
+		&:hover
+			color #FFF
+	&__content
+		border 4px solid #fff
+		min-height 50%
